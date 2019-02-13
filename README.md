@@ -1,7 +1,6 @@
 # README
 
-This is an application template. It is a summary of about 5 years of
-building web applications, and this app template demonstrates particularly, a full blown production-ready `AngularJS` app.
+This is a credit score application built on top of a full blown production-ready `AngularJS` boilerplate.
 
 The term `app` is used to substitute the name of the application.
 
@@ -111,8 +110,8 @@ This is a shortcut to using mocha:
 
 ### Running the App
 
-When `server.js` is run, it will automatically open in the browser the addresses: `http://localhost:8080/prod/#/` the production environment
-and `http://localhost:8080/dev/#/` the development environment. 
+When `server.js` is run, it will automatically open in the browser the address:
+`http://localhost:8080/dev/#/` which uses the development environment. 
 
 Take note that production environment uses the `/dist` folder and has extra features like concat and minify,
  which are handled during the build process. It also uses fallback library to load the scripts thru `xhr` 
