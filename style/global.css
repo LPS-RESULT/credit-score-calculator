@@ -1,0 +1,109 @@
+.offset-header{
+    margin-top: 80px;
+}
+
+.p-t-1{
+	padding-top:15px;
+}
+
+.p-t-2{
+	padding-top:35px;
+}
+
+.p-b-1{
+	padding-bottom:15px;
+}
+
+.p-b-2{
+	padding-bottom:35px;
+}
+
+.p-l-0{
+	padding-left: 0px;
+}
+
+.p-r-0{
+	padding-right:0px;
+}
+
+.m-t-1{
+	margin-top:15px;
+}
+
+.m-t-2{
+	margin-top:35px;
+}
+
+.m-b-1{
+	margin-bottom:15px;
+}
+
+.no-margin{
+	margin:0px;
+}
+
+
+.progress-bar {
+  width: 0;
+  animation: progress 1.5s ease-in-out forwards;
+  
+  .title {
+    opacity: 0;
+    animation: show 0.35s forwards ease-in-out 0.5s;
+  }
+} 
+
+.progress-bar-warning.yellow{
+	background-color: #F8D244 !important;
+}
+
+@keyframes progress {
+  from {
+    width: 0;
+  }
+  to {
+    width: 20%;
+  }
+} 
+@keyframes show  {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+.inline{
+	display: inline;
+}
+
+.float-right{
+	float: right;
+}
+
+.animate-panel{
+	overflow: hidden;
+	transition: height 0.50s ease-in;
+	height: 0px;
+    padding:0px;
+}
+
+.panel-expanded{
+	height:330px;
+	padding:0px;
+}
+
+.panel-unexpanded{
+    height:0px;
+    padding:0px;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.padded-panel {
+    padding: 15px 30px;
+}

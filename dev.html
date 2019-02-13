@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <title>Credit Score Calculator</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+    <link rel="stylesheet" type="text/css" href="./style/lib/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./style/global.css">
+</head>
+<body>
+    <div ng-view></div>
+
+    <!-- Libraries -->
+    <script type="text/javascript" src="./js/lib/polyfills.js"></script>
+    <script type="text/javascript" src="./js/lib/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="./js/lib/angular.min.js"></script>
+    <script type="text/javascript" src="./js/lib/ui-bootstrap.min.js"></script>
+    <script type="text/javascript" src="./js/lib/angular-sanitize.min.js"></script>
+    <script type="text/javascript" src="./js/lib/angular-route.min.js"></script>
+
+    <!-- APP-UTIL Module -->
+    <script type="text/javascript" src="./js/app-util/app-util.js"></script>
+    <script type="text/javascript" src="./js/app-util/providers/$localizationProvider.js"></script>
+    <script type="text/javascript" src="./js/app-util/providers/$localStorageProvider.js"></script>
+    <script type="text/javascript" src="./js/app-util/services/jsonService.js"></script>
+    <script type="text/javascript" src="./js/app-util/services/objectService.js"></script>
+
+    <!-- APP-API Module -->
+    <script type="text/javascript" src="./js/app-api/app-api.js"></script>
+    <script type="text/javascript" src="./js/app-api/providers/$apiProvider.js"></script>
+
+    <!-- APP Module -->
+    <script type="text/javascript" src="./js/app/app.js"></script>
+    <script type="text/javascript" src="./js/app/configs/appConfig.js"></script>
+    <script type="text/javascript" src="./js/app/configs/parcelRuleConfig.js"></script>
+
+    <script type="text/javascript" src="./js/app/controllers/app/appController.js"></script>
+    <script type="text/javascript" src="./js/app/controllers/common/footerController.js"></script>
+    <script type="text/javascript" src="./js/app/controllers/common/headerController.js"></script>
+
+    <script type="text/javascript" src="./js/app/factories/parcelFactory.js"></script>
+    <script type="text/javascript" src="./js/app/factories/profileFactory.js"></script>
+    <script type="text/javascript" src="./js/app/filters/localizationFilter.js"></script>
+    <script type="text/javascript" src="./js/app/providers/$categoryProvider.js"></script>
+    <script type="text/javascript" src="./js/app/runs/rootSetup.js"></script>
+    <script type="text/javascript" src="./js/app/services/creditScoreService.js"></script>
+
+
+    <!-- FOR DEV ONLY!! -->
+    <script type="text/javascript" src="./js/dev.js"></script>
+</body>
+</html>

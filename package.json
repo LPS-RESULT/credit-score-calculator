@@ -1,0 +1,47 @@
+{
+  "name": "credit-score-calculator",
+  "version": "1.0.0",
+  "description": "A working example project of credit score calculation using MEANSTACK",
+  "main": "app.js",
+  "directories": {
+    "doc": "doc",
+    "tests": "tests"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "test": "mocha tests/**/*.js --reporter spec --timeout 30000"
+  },
+  "keywords": [
+    "MEAN", "ExpressJS", "NodeJS", "AngularJS"
+  ],
+  "author": "Jason Wong",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "body-parser": "^1.18.3",
+    "cookie-parser": "1.4.3",
+    "express": "^4.16.4",
+    "grunt": "^1.0.3",
+    "grunt-angular-templates": "^1.1.0",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-cssmin": "^1.0.2",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-nodeunit": "^2.0.0",
+    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-karma": "^3.0.1",
+    "http": "0.0.0",
+    "jasmine-core": "^2.5.2",
+    "mocha": "^5.2.0",
+    "path": "^0.12.7",
+    "puppeteer": "^1.11.0"
+  },
+  "dependencies": {
+    "chai": "^4.2.0",
+    "crypto-js": "^3.1.9-1",
+    "mongodb": "^2.2.31",
+    "mongoose": "^4.10.4",
+    "open": "0.0.5",
+    "request-promise": "^4.2.2"
+  }
+}

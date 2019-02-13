@@ -1,0 +1,167 @@
+<!-- <ng-include src="'./html/common/header.html'"></ng-include> -->
+
+<!-- <div class="offset-header container">
+    <div class="content">
+        <div class="row">
+            <div class="col-xs-3">
+                <label>{{label('weight')}} (kg)</label>
+                <input type="number" min="0" max="9007199254740991" class="form-control"
+                       ng-model="parcel.weight" ng-change="onParcelValueChange()">
+            </div>
+            <div class="col-xs-3">
+                <label>{{label('height')}} (cm)</label>
+                <input type="number" min="0" max="9007199254740991" class="form-control"
+                       ng-model="parcel.height" ng-change="onParcelValueChange()">
+            </div>
+            <div class="col-xs-3">
+                <label>{{label('width')}} (cm)</label>
+                <input type="number" min="0" max="9007199254740991" class="form-control"
+                       ng-model="parcel.width" ng-change="onParcelValueChange()">
+            </div>
+            <div class="col-xs-3">
+                <label>{{label('depth')}} (cm)</label>
+                <input type="number" min="0" max="9007199254740991" class="form-control"
+                       ng-model="parcel.depth" ng-change="onParcelValueChange()">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-xs-offset-3 text-center">
+                <h3>{{label(summary.category)}}</h3>
+                <h3 ng-if="summary.cost!=null">{{"$ "+summary.cost.toFixed(2)}}</h3>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<!-- <ng-include src="'./html/common/footer.html'"></ng-include> -->
+
+    <div class="container p-t-1 col-sm-6 col-sm-offset-3">
+        <div class="content form-group">
+            <div class="panel" ng-class=getPanelClass()>
+                <div class="panel-heading">
+                    <h3 ng-if=showForms class="panel-title">Profile Form</h3>
+                    <h3 ng-if=showResults class="panel-title">Loan Application</h3>
+                </div>
+
+                <div class="panel-body" style="padding-left:30px; padding-right:30px; padding-bottom: 20px;" ng-if=showForms>
+                    <h3>Please enter profile details:</h3>
+                    <div class="col-sm-6 p-t-1 p-l-0">
+                        <label>First Name</label>
+                        <input type="text" class="form-control" ng-model="profile.firstName"/>
+                    </div>
+                    <div class="col-sm-6 p-t-1 p-r-0">
+                    <label>Last Name</label>
+                    <input type="text" class="form-control" ng-model="profile.lastName"/>
+                    </div>
+                    <div class="col-sm-12 p-t-1 p-l-0 p-r-0">
+                        <label>Address</label><br>
+                        <textarea rows="2" style="resize: none" class="form-control" ng-model="profile.address"></textarea>
+                    </div>
+                    <div class="col-sm-6 p-t-1 p-l-0">
+                        <label>Age</label>
+                        <input type="number" class="form-control" ng-model="profile.age"/>
+                    </div>
+                    <div class="col-sm-6 p-t-1 p-r-0">
+                        <label>Gender</label>
+                        <select class="form-control" ng-model="profile.gender">
+                            <option>Male</option>
+                            <option>Female</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-6 p-t-1 p-l-0">
+                        <label>Income</label>
+                        <input type="number" class="form-control" ng-model="profile.income"/>
+                    </div>
+                    <div class="col-sm-6 p-t-1 p-r-0">
+                        <label>Home Ownership</label>
+                        <select class="form-control" ng-model="profile.homeOwnership">
+                            <option>own</option>
+                            <option>rent</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-6 p-t-1 p-l-0 p-b-2">
+                        <label>Loan Amount</label>
+                        <input type="number" class="form-control" ng-model="profile.loanAmount"/>
+                    </div>
+                    <div class="col-sm-6 p-t-1 p-r-0 p-b-2">
+                        <label>Loan Type</label>
+                        <select class="form-control" ng-model="profile.type">
+                            <option>personal</option>
+                            <option>business</option>
+                        </select>
+                    </div>
+                    <button ng-click="submitDetails(profile)" type="submit" ng-class="getButtonClass()" class="btn btn-primary btn-lg btn-block m-t-2">Submit</button>
+                </div>
+
+                <div class="panel-body text-center" ng-if=showResults>
+                    
+                    <H1 class="m-b-1">{{loanApproval}}</H1>
+                    <span>With a credit score of</span><br>
+                    <h1 class="no-margin count">{{creditScore}}</h1>
+                    <span class="p-t-1">out of 999</span>
+
+                    <h2>{{creditRating}}</h2>
+                    <div class="progress">
+                        <div ng-if="displayGauge(0)" class="progress-bar progress-bar-danger"></div>
+                        <div ng-if="displayGauge(371)" class="progress-bar progress-bar-warning"></div>
+                        <div ng-if="displayGauge(481)" class="progress-bar progress-bar-warning yellow"></div>
+                        <div ng-if="displayGauge(581)" class="progress-bar progress-bar-success"></div>
+                        <div ng-if="displayGauge(631)" class="progress-bar"></div>
+                    </div>
+
+                    <button ng-class="getButtonClass()" ng-click="resetForm()" type="submit" class="btn btn-lg btn-block m-t-2">
+                        Reset Form</button>
+                </div>
+
+            </div>
+
+            <div class="panel panel-primary" ng-if="showResults == true && loanApproval == 'ACCEPTED'">
+                <div class="panel-heading clickable" ng-click=expandPanel()>
+                    <h3 class="panel-title inline">Here's your Breakdown</h3>
+                    <span ng-if="isExpanded" class="pull-right">▼</span>
+                    <span ng-if="!isExpanded" class="pull-right">▲</span>
+                </div>
+                <div class="panel-body animate-panel" ng-class=expandedPanel()>
+                    <div class="col-md-6 padded-panel">
+                        <h3 class="m-t-1">Five Year Plan</h3>
+                        <label class="p-t-1">Approved Loan:</label><br>
+                        <span>{{approvalDetails.data.calculation.fiveYear.approvedLoan |  currency:"NZD "}}</span><br>
+
+                        <label class="p-t-1">Monthly Repayment:</label><br>
+                        <span>{{approvalDetails.data.calculation.fiveYear.monthlyRepayment |  currency:"NZD "}} </span><br>
+
+                        <label class="p-t-1">Total Interest:</label><br>
+                        <span>{{approvalDetails.data.calculation.fiveYear.totalInterest |  currency:"NZD "}} </span><br>
+
+                        <label class="p-t-1">Total Repayments:</label><br>
+                        <span>{{approvalDetails.data.calculation.fiveYear.totalRepayment |  currency:"NZD "}} </span><br>
+                    </div>
+
+                    <div class="col-md-6 padded-panel">
+                        <h3 class="m-t-1">Three Year Plan</h3>
+                        <label class="p-t-1">Approved Loan:</label><br>
+                        <span>{{approvalDetails.data.calculation.threeYear.approvedLoan |  currency:"NZD "}}</span><br>
+
+                        <label class="p-t-1">Monthly Repayment:</label><br>
+                        <span>{{approvalDetails.data.calculation.threeYear.monthlyRepayment |  currency:"NZD "}} </span><br>
+
+                        <label class="p-t-1">Total Interest:</label><br>
+                        <span>{{approvalDetails.data.calculation.threeYear.totalInterest |  currency:"NZD "}} </span><br>
+
+                        <label class="p-t-1">Total Repayments:</label><br>
+                        <span>{{approvalDetails.data.calculation.threeYear.totalRepayment |  currency:"NZD "}} </span><br>
+                    </div>
+
+
+                </div>
+            </div>
+            
+
+            
+            
+        </div>
+        
+    </div>
+
+    
+</div>

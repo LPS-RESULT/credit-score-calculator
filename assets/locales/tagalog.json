@@ -1,0 +1,12 @@
+{
+  "weight": "Bigat",
+  "height": "Tangkad",
+  "width": "Lapad",
+  "depth": "Lalim",
+
+  "reject": "Bawal",
+  "heavy": "Mabigat",
+  "small": "Maliit",
+  "medium": "Katamtaman",
+  "large": "Malaki"
+}

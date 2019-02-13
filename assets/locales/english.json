@@ -1,0 +1,12 @@
+{
+  "weight": "Weight",
+  "height": "Height",
+  "width": "Width",
+  "depth": "Depth",
+
+  "reject": "Reject",
+  "heavy": "Heavy",
+  "small": "Small",
+  "medium": "Medium",
+  "large": "Large"
+}
