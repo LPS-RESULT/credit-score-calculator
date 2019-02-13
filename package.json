@@ -1,7 +1,7 @@
 {
   "name": "credit-score-calculator",
   "version": "1.0.0",
-  "description": "A working example project of credit score calculation using MEANSTACK",
+  "description": "A working example project of credit score calculation using MEAN stack",
   "main": "app.js",
   "directories": {
     "doc": "doc",
@@ -15,7 +15,7 @@
     "MEAN", "ExpressJS", "NodeJS", "AngularJS"
   ],
   "author": "Jason Wong",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "devDependencies": {
     "body-parser": "^1.18.3",
     "cookie-parser": "1.4.3",
